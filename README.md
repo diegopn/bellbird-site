@@ -12,6 +12,8 @@ As páginas compartilham os arquivos de estilo e interação e o ícone em asset
 
 ## GitHub Pages
 
-O site não precisa de build. Para ativar a publicação, abra Settings → Pages no repositório e escolha Deploy from a branch, branch main e pasta /(root). Depois dessa configuração inicial, cada atualização enviada à branch main é publicada automaticamente.
+A publicação segue o mesmo modelo do Ovenbird: o site é estático, sem etapa de build nem arquivo de workflow. O GitHub Pages gera e publica o conteúdo automaticamente a partir da branch main.
+
+Configure uma vez em Settings → Pages: selecione Deploy from a branch, a branch main e a pasta /(root). Depois disso, cada atualização enviada à main é publicada automaticamente.
 
 Endereço: https://diegopn.github.io/bellbird-site/
