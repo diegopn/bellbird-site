@@ -34,3 +34,82 @@
 *,*::before,*::after{border-radius:0!important}
 .language-switcher,.language-option{border-radius:999px!important}
 .theme-toggle{border-radius:50%!important}
+
+
+/* User manual */
+.manual-page .skip-link{border-radius:0}
+.manual-hero{padding-block:76px 64px;border-bottom:1px solid var(--line);background:var(--soft)}
+.manual-hero .wrap{max-width:1000px}
+.manual-hero h1{max-width:780px;margin:14px 0;font-size:clamp(3rem,6vw,5rem);line-height:.96}
+.manual-intro{max-width:760px;color:var(--copy);font-size:17px}
+.manual-meta{display:flex;flex-wrap:wrap;gap:10px 24px;margin:24px 0 0;color:var(--muted);font-size:12px}
+.manual-meta span{display:inline-flex;gap:7px}
+.manual-meta b{color:var(--ink)}
+.manual-meta .manual-meta-author{flex-basis:100%}
+.manual-layout{display:grid;grid-template-columns:minmax(180px,230px) minmax(0,1fr);align-items:start;gap:clamp(30px,6vw,84px);max-width:1100px;padding-block:66px 100px}
+.manual-toc{position:sticky;top:100px;padding:20px 0;border-top:2px solid var(--ink)}
+.manual-toc h2{margin:0 0 12px;font:700 11px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase}
+.manual-toc ol{display:grid;gap:4px;margin:0;padding:0;list-style:none}
+.manual-toc a{display:block;padding:6px 0;color:var(--muted);font-size:12px}
+.manual-toc a:hover{color:var(--blue-ink)}
+.manual-content>section{padding:0 0 36px;border-bottom:1px solid var(--line)}
+.manual-content>section+section{padding-top:38px}
+.manual-content h2{margin:0 0 16px;font:400 clamp(1.8rem,3vw,2.5rem)/1.1 var(--serif);letter-spacing:-.025em}
+.manual-content h3{margin:26px 0 8px;font:700 16px/1.4 var(--sans)}
+.manual-content p,.manual-content li{color:var(--copy);font-size:14px;line-height:1.8}
+.manual-content ul,.manual-content ol{padding-left:22px}
+.manual-content a:not(.button){color:var(--blue-ink);font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.manual-note{margin:20px 0;padding:16px 18px;border-left:3px solid var(--blue);background:var(--blue-soft);color:var(--copy);font-size:13px}
+.manual-code{overflow-x:auto;margin:12px 0 20px;padding:14px 16px;border:1px solid var(--line);background:var(--soft);color:var(--ink);font:13px/1.7 ui-monospace,SFMono-Regular,Consolas,monospace}
+.manual-shot{margin:22px 0 0;break-inside:avoid;page-break-inside:avoid}
+.manual-shot-box{display:grid;min-height:150px;place-items:center;padding:22px;border:1px dashed var(--blue);background:var(--soft);text-align:center}
+.manual-shot-box span{max-width:58ch;color:var(--copy);font-size:13px;line-height:1.75}
+.manual-shot .manual-shot-placeholder{box-sizing:border-box;aspect-ratio:16/10;min-height:150px;align-content:center;justify-items:center;gap:8px;padding:clamp(18px,3vw,28px)}
+.manual-shot .manual-shot-placeholder>*{width:100%;max-width:60ch}
+.manual-shot .manual-shot-label{color:var(--ink);font-size:14px;font-weight:700}
+.manual-shot .manual-shot-description{color:var(--copy);font-size:13px;line-height:1.65}
+.manual-shot .manual-shot-alt{color:var(--muted);font-size:11px;line-height:1.55}
+.manual-shot img{display:block;width:100%;height:auto;border:1px solid var(--line)}
+.manual-shot figcaption{margin-top:7px;color:var(--muted);font-size:11px;line-height:1.5}
+.manual-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 24px;margin:22px 0;border-top:1px solid var(--line)}
+.manual-facts>div{display:grid;gap:4px;padding:12px 0;border-bottom:1px solid var(--line)}
+.manual-facts dt{color:var(--ink);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+.manual-facts dd{margin:0;color:var(--copy);font-size:13px}
+.manual-print-note{margin-top:28px;color:var(--muted)!important;font-size:12px!important}
+.manual-page .main-nav a[aria-current="page"]{color:var(--blue-ink)}
+@media(max-width:740px){
+  .manual-hero{padding-block:48px 38px}
+  .manual-hero h1{font-size:clamp(2.7rem,11vw,3.6rem)}
+  .manual-intro{font-size:15px}
+  .manual-layout{grid-template-columns:minmax(0,1fr);gap:24px;padding-block:40px 70px}
+  .manual-toc,.manual-content{min-width:0}
+  .manual-toc{position:static;padding:15px 0}
+  .manual-toc ol{grid-template-columns:repeat(2,minmax(0,1fr));column-gap:16px}
+  .manual-content h2{font-size:2rem}
+  .manual-facts{grid-template-columns:1fr}
+  .manual-meta .manual-meta-author{display:block}
+  .manual-meta .manual-meta-author b{margin-right:7px}
+  .manual-content p code,.manual-content li code{overflow-wrap:anywhere}
+  .manual-shot .manual-shot-placeholder{min-height:145px;padding:18px}
+  .manual-shot .manual-shot-label{font-size:13px}
+  .manual-shot .manual-shot-description{font-size:12px}
+  .manual-shot .manual-shot-alt{font-size:10px}
+}
+@media print{
+  @page{size:A4;margin:16mm 14mm}
+  body.manual-page{background:#fff!important;color:#111!important}
+  body.manual-page .site-header,body.manual-page .manual-toc,body.manual-page .site-footer,body.manual-page .manual-print-note{display:none!important}
+  body.manual-page .manual-hero{padding:0 0 8mm;border:0;background:#fff!important}
+  body.manual-page .manual-hero .wrap,body.manual-page .manual-layout{width:100%;max-width:none}
+  body.manual-page .manual-hero h1{margin-top:0;color:#111;font-size:30pt}
+  body.manual-page .manual-intro,body.manual-page .manual-meta,body.manual-page .manual-content p,body.manual-page .manual-content li,body.manual-page .manual-facts dd{color:#222!important}
+  body.manual-page .manual-layout{display:block;padding:0}
+  body.manual-page .manual-content>section{padding:0 0 8mm;border-color:#bbb}
+  body.manual-page .manual-content>section+section{padding-top:8mm}
+  body.manual-page .manual-content h2,body.manual-page .manual-content h3{color:#111;break-after:avoid;page-break-after:avoid}
+  body.manual-page .manual-facts,body.manual-page .manual-facts>div,body.manual-page .manual-note,body.manual-page .manual-code,body.manual-page .manual-shot-placeholder{break-inside:avoid;page-break-inside:avoid}
+  body.manual-page .manual-shot-placeholder{background:#fff;border-color:#777;print-color-adjust:exact;-webkit-print-color-adjust:exact}
+  body.manual-page .manual-content a:not(.button){color:#111}
+  body.manual-page .manual-code{overflow-wrap:anywhere;white-space:pre-wrap}
+  body.manual-page p,body.manual-page li{orphans:3;widows:3}
+}

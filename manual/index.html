@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Manual do Bellbird: formatos compatíveis, modelos acadêmicos, conversão local e exportação de documentos LaTeX.">
+  <meta name="author" content="Diego Pereira do Nascimento">
+  <meta name="dcterms.modified" content="2026-10-12">
+  <meta name="theme-color" content="#f7faff">
+  <title>Manual do usuário — Bellbird</title>
+  <link rel="canonical" href="https://diegopn.github.io/bellbird-site/manual/">
+  <link rel="icon" href="../assets/bellbird-icon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Manual do Bellbird",
+    "inLanguage": "pt-BR",
+    "url": "https://diegopn.github.io/bellbird-site/manual/",
+    "author": {
+      "@type": "Person",
+      "name": "Diego Pereira do Nascimento"
+    },
+    "dateModified": "2026-10-12",
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Bellbird",
+      "softwareVersion": "0.1.0"
+    }
+  }
+  </script>
+  <script>
+    try {
+      const theme = localStorage.getItem("bellbird-theme");
+      if (theme === "dark" || theme === "light") document.documentElement.dataset.theme = theme;
+    } catch {}
+  </script>
+</head>
+<body class="manual-page">
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+
+  <header class="site-header">
+    <a class="brand" href="../#inicio" aria-label="Voltar ao início do Bellbird">
+      <img src="../assets/bellbird-icon.png" alt="">
+      <span><strong>Bellbird</strong><small>Documentos para LaTeX</small></span>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Navegação principal">
+      <a href="../#fluxo">Como funciona</a>
+      <a href="../#formatos">Formatos</a>
+      <a href="../#privacidade">Privacidade</a>
+      <a href="../#download">Download</a>
+      <a href="./" aria-current="page">Manual</a>
+    </nav>
+
+    <div class="header-actions">
+      <a class="github-link" href="https://github.com/diegopn/bellbird" target="_blank" rel="noopener noreferrer" aria-label="Repositório do Bellbird no GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.4 7.85 10.93.58.1.79-.25.79-.56v-2.16c-3.19.69-3.87-1.35-3.87-1.35-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.06.75.81 1.2 1.84 1.2 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
+      </a>
+
+      <div class="language-switcher" role="group" aria-label="Idioma">
+        <a class="language-option is-active" href="./" lang="pt-BR" aria-current="page">PT</a>
+        <a class="language-option" href="../en/" lang="en">EN</a>
+        <a class="language-option" href="../es/" lang="es">ES</a>
+      </div>
+
+      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Ativar tema escuro" title="Ativar tema escuro">
+        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13.1A8.5 8.5 0 0 1 10.9 3.2 8.5 8.5 0 1 0 20.8 13.1Z"/></svg>
+        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+      </button>
+
+      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="main-nav" aria-label="Abrir menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="manual-hero" id="inicio">
+      <div class="wrap">
+        <p class="kicker">Manual do usuário · edição 1</p>
+        <h1>Manual do Bellbird</h1>
+        <p class="manual-intro">Este guia apresenta os formatos compatíveis, os modelos LaTeX e o fluxo para converter, revisar e exportar documentos no Bellbird.</p>
+        <p class="manual-meta">
+          <span><b>Edição do manual</b>1ª edição</span>
+          <span><b>Versão do aplicativo</b>0.1.0</span>
+          <span><b>Atualizado</b><time datetime="2026-10-12">12 de outubro de 2026</time></span>
+          <span class="manual-meta-author"><b>Autoria do manual</b>Diego Pereira do Nascimento</span>
+        </p>
+      </div>
+    </section>
+
+    <div class="wrap manual-layout">
+      <aside class="manual-toc" aria-label="Conteúdo deste manual">
+        <h2>Neste guia</h2>
+        <ol>
+          <li><a href="#sobre">O que é o Bellbird</a></li>
+          <li><a href="#formatos">Formatos e modelos</a></li>
+          <li><a href="#converter">Converter um documento</a></li>
+          <li><a href="#resultado">Revisar e exportar</a></li>
+          <li><a href="#privacidade">Privacidade e limites</a></li>
+          <li><a href="#instalacao">Requisitos e instalação</a></li>
+          <li><a href="#problemas">Problemas comuns</a></li>
+          <li><a href="#software-info">Ficha do software</a></li>
+        </ol>
+      </aside>
+
+      <article class="manual-content">
+        <section id="sobre">
+          <p class="kicker">01 · Visão geral</p>
+          <h2>O que é o Bellbird</h2>
+          <p>O Bellbird é um aplicativo para GNOME que converte documentos em código LaTeX organizado. O processamento acontece no próprio computador, sem exigir conta ou conexão com a internet para converter arquivos.</p>
+          <p>O resultado é um arquivo LaTeX que você pode revisar, copiar ou exportar para continuar trabalhando nas ferramentas que preferir.</p>
+          <figure class="manual-shot">
+            <div class="manual-shot-box manual-shot-placeholder" role="img" aria-label="Espaço reservado para uma captura da janela inicial do Bellbird, com a opção de selecionar ou arrastar um documento.">
+              <span class="manual-shot-label">Espaço reservado para captura de tela</span>
+              <span class="manual-shot-description">Janela inicial do Bellbird com as opções para arrastar ou selecionar um documento.</span>
+              <span class="manual-shot-alt">Texto alternativo previsto: Tela inicial do Bellbird aguardando a seleção de um documento.</span>
+            </div>
+            <figcaption>Tela inicial do Bellbird.</figcaption>
+          </figure>
+        </section>
+
+        <section id="formatos">
+          <p class="kicker">02 · Formatos e modelos</p>
+          <h2>Escolha um documento e um padrão de saída</h2>
+          <h3>Formatos de entrada</h3>
+          <p>O Bellbird abre os seguintes formatos:</p>
+          <ul>
+            <li>Word: .docx</li>
+            <li>EPUB: .epub</li>
+            <li>HTML: .htm e .html</li>
+            <li>Markdown: .markdown e .md</li>
+            <li>OpenDocument: .odt</li>
+            <li>Org: .org</li>
+            <li>reStructuredText: .rst</li>
+            <li>LaTeX: .tex</li>
+            <li>Texto simples: .txt</li>
+          </ul>
+          <h3>Modelos de saída</h3>
+          <p>Escolha o estilo LaTeX adequado ao seu documento:</p>
+          <ul>
+            <li>LaTeX padrão</li>
+            <li>ABNT (abnTeX2)</li>
+            <li>IEEE (IEEEtran)</li>
+            <li>ACM (acmart)</li>
+            <li>Elsevier (elsarticle)</li>
+            <li>Springer Nature (sn-jnl)</li>
+          </ul>
+          <figure class="manual-shot">
+            <div class="manual-shot-box manual-shot-placeholder" role="img" aria-label="Espaço reservado para uma captura do seletor de estilos LaTeX com os modelos disponíveis no Bellbird.">
+              <span class="manual-shot-label">Espaço reservado para captura de tela</span>
+              <span class="manual-shot-description">Seletor de estilo LaTeX com as opções padrão, ABNT, IEEE, ACM, Elsevier e Springer Nature.</span>
+              <span class="manual-shot-alt">Texto alternativo previsto: Lista de modelos de saída LaTeX do Bellbird.</span>
+            </div>
+            <figcaption>Modelos LaTeX disponíveis.</figcaption>
+          </figure>
+        </section>
+
+        <section id="converter">
+          <p class="kicker">03 · Conversão</p>
+          <h2>Converta um documento em LaTeX</h2>
+          <ol>
+            <li>Arraste um arquivo para a janela do Bellbird ou escolha <strong>Selecionar um arquivo</strong>.</li>
+            <li>Depois que o documento for aberto, escolha o modelo no campo <strong>Estilo LaTeX</strong>.</li>
+            <li>Aguarde o processamento. O código gerado aparece na área <strong>Saída LaTeX</strong>.</li>
+          </ol>
+          <p>Para trocar o modelo, selecione outra opção em <strong>Estilo LaTeX</strong>. O Bellbird atualiza a saída usando o documento que já está aberto.</p>
+          <p>Os arquivos devem ter até 10 MiB. Para evitar falhas, confirme também que o arquivo está disponível localmente no computador.</p>
+          <figure class="manual-shot">
+            <div class="manual-shot-box manual-shot-placeholder" role="img" aria-label="Espaço reservado para uma captura do fluxo de conversão, mostrando um documento aberto e o modelo LaTeX selecionado.">
+              <span class="manual-shot-label">Espaço reservado para captura de tela</span>
+              <span class="manual-shot-description">Documento aberto no Bellbird, com o estilo de saída escolhido.</span>
+              <span class="manual-shot-alt">Texto alternativo previsto: Documento selecionado e modelo LaTeX escolhido no Bellbird.</span>
+            </div>
+            <figcaption>Seleção do documento e do modelo de saída.</figcaption>
+          </figure>
+        </section>
+
+        <section id="resultado">
+          <p class="kicker">04 · Resultado</p>
+          <h2>Revise, copie ou exporte o resultado</h2>
+          <ol>
+            <li>Leia o código na área <strong>Saída LaTeX</strong>. Os números de linha ajudam a localizar trechos.</li>
+            <li>Use <strong>Copiar LaTeX</strong> para copiar o conteúdo para a área de transferência.</li>
+            <li>Use <strong>Exportar LaTeX</strong> para salvar um arquivo .tex. O seletor sugere a pasta Downloads e um nome baseado no documento; você pode escolher outro destino ou nome.</li>
+          </ol>
+          <p>Revise avisos e o código antes de usar o resultado. Alguns conteúdos podem ser convertidos em texto simples para manter um LaTeX válido, e documentos com problemas estruturais ou de citação podem precisar de ajustes.</p>
+          <p>O Bellbird usa os dados de autoria encontrados no documento. Se não houver autor, o resultado indica o local para preenchimento.</p>
+          <figure class="manual-shot">
+            <div class="manual-shot-box manual-shot-placeholder" role="img" aria-label="Espaço reservado para uma captura da saída LaTeX, com numeração de linhas e ações para copiar ou exportar.">
+              <span class="manual-shot-label">Espaço reservado para captura de tela</span>
+              <span class="manual-shot-description">Área de saída LaTeX com os botões para copiar e exportar o código.</span>
+              <span class="manual-shot-alt">Texto alternativo previsto: Código LaTeX gerado pelo Bellbird com numeração de linhas.</span>
+            </div>
+            <figcaption>Revisão do código LaTeX gerado.</figcaption>
+          </figure>
+        </section>
+
+        <section id="privacidade">
+          <p class="kicker">05 · Privacidade e limites</p>
+          <h2>Como seus documentos são processados</h2>
+          <p>A conversão é local. O Bellbird não envia os documentos para um serviço na nuvem e não exige conta nem conexão à internet para processá-los.</p>
+          <h3>O que a saída inclui</h3>
+          <ul>
+            <li>O Bellbird gera um único arquivo .tex; não cria um PDF.</li>
+            <li>Imagens e recursos anexos não são incluídos na saída. Quando disponíveis, as descrições das imagens são mantidas como texto.</li>
+            <li>O Bellbird não compila LaTeX. Para gerar um PDF, abra o arquivo exportado em uma distribuição LaTeX e instale a classe e os pacotes exigidos pelo modelo escolhido.</li>
+          </ul>
+        </section>
+
+        <section id="instalacao">
+          <p class="kicker">06 · Instalação</p>
+          <h2>Requisitos e instalação</h2>
+          <p>A versão instalável do Bellbird está em preparação e será distribuída em formato Flatpak para Linux com GNOME.</p>
+          <p>Quando o pacote estiver disponível, esta seção receberá as instruções de instalação. Se o Flatpak ainda não estiver configurado no seu computador, consulte as <a href="https://flathub.org/pt-BR/setup" target="_blank" rel="noopener noreferrer">instruções para preparar o sistema</a>.</p>
+          <p><a href="../#download">Consulte as informações de download</a> para acompanhar a disponibilidade da versão instalável.</p>
+        </section>
+
+        <section id="problemas">
+          <p class="kicker">07 · Solução de problemas</p>
+          <h2>Problemas comuns</h2>
+          <h3>O formato do arquivo não é compatível</h3>
+          <p>Confira a lista de formatos de entrada neste manual e selecione um arquivo com uma das extensões compatíveis.</p>
+          <h3>O arquivo não pode ser aberto</h3>
+          <p>Confirme que o arquivo está disponível localmente, que o aplicativo tem acesso a ele e que o tamanho não ultrapassa 10 MiB.</p>
+          <h3>O resultado precisa de ajustes</h3>
+          <p>Revise as mensagens e o código gerado. Recursos não compatíveis podem virar texto simples, e citações ou estruturas LaTeX podem exigir correção manual.</p>
+          <h3>Preciso de um PDF</h3>
+          <p>O Bellbird gera código LaTeX, mas não o compila. Use uma distribuição LaTeX com a classe e os pacotes necessários para o modelo escolhido.</p>
+          <p>Se o problema continuar, registre os passos que levaram ao erro e a mensagem exibida em <a href="https://github.com/diegopn/bellbird/issues" target="_blank" rel="noopener noreferrer">Relatar um problema</a>.</p>
+        </section>
+
+        <section id="software-info">
+          <p class="kicker">08 · Identificação</p>
+          <h2>Ficha do software e deste manual</h2>
+          <h3>Software documentado</h3>
+          <dl class="manual-facts">
+            <div><dt>Nome</dt><dd>Bellbird</dd></div>
+            <div><dt>Desenvolvedor</dt><dd>Diego Pereira do Nascimento</dd></div>
+            <div><dt>Versão documentada</dt><dd>0.1.0</dd></div>
+            <div><dt>Plataforma</dt><dd>Linux · GNOME</dd></div>
+            <div><dt>Distribuição prevista</dt><dd>Flatpak · em preparação</dd></div>
+            <div><dt>Licença</dt><dd>GNU GPL versão 3 ou posterior (GPL-3.0-or-later)</dd></div>
+            <div><dt>Tecnologias</dt><dd>Rust · GTK 4 · Libadwaita</dd></div>
+          </dl>
+          <h3>Autoria e edição do manual</h3>
+          <dl class="manual-facts">
+            <div><dt>Autoria</dt><dd>Diego Pereira do Nascimento</dd></div>
+            <div><dt>Edição</dt><dd>1ª edição · Português (Brasil)</dd></div>
+            <div><dt>Atualização</dt><dd><time datetime="2026-10-12">12 de outubro de 2026</time></dd></div>
+          </dl>
+          <h3>Links do projeto</h3>
+          <ul>
+            <li><a href="../">Site do Bellbird</a></li>
+            <li><a href="https://github.com/diegopn/bellbird/issues" target="_blank" rel="noopener noreferrer">Relatar um problema</a></li>
+          </ul>
+          <p class="manual-print-note">Para salvar este manual em PDF, use a opção de impressão do navegador e escolha “Salvar como PDF”.</p>
+        </section>
+      </article>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-row">
+      <a class="footer-brand" href="../#inicio"><img src="../assets/bellbird-icon.png" alt=""><strong>Bellbird</strong></a>
+      <span>Manual do usuário · Português (Brasil)</span>
+      <a href="#inicio">Voltar ao topo ↑</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

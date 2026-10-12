@@ -8,6 +8,8 @@ Site estático de apresentação do Bellbird, conversor local de documentos para
 - English: https://diegopn.github.io/bellbird-site/en/
 - Español: https://diegopn.github.io/bellbird-site/es/
 
+[Manual do usuário (Português)](https://diegopn.github.io/bellbird-site/manual/)
+
 As páginas compartilham os arquivos de estilo e interação e o ícone em assets/.
 
 ## GitHub Pages
