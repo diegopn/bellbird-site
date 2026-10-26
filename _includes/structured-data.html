@@ -1,0 +1,77 @@
+{%- assign schema_page_url = page.url | absolute_url -%}
+{%- assign schema_page_id = schema_page_url | append: "#webpage" -%}
+{%- assign schema_site_url = site.url | append: site.baseurl | append: "/" -%}
+{%- assign schema_website_id = schema_site_url | append: "#website" -%}
+{%- assign schema_person_id = site.url | append: "/#person" -%}
+{%- assign schema_software_id = schema_site_url | append: "#software" -%}
+{%- assign schema_article_id = schema_page_url | append: "#article" -%}
+{%- assign schema_language = page.lang | default: site.default_lang -%}
+{%- assign schema_name = page.schema_name | default: page.title | default: site.name -%}
+{%- assign schema_description = page.description | default: site.description | strip_html | normalize_whitespace | truncate: 320 -%}
+{%- assign schema_image = page.image | default: site.social_image -%}
+{%- if schema_image contains "://" -%}
+  {%- assign schema_image_url = schema_image -%}
+{%- else -%}
+  {%- assign schema_image_url = schema_image | absolute_url -%}
+{%- endif -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": {{ schema_website_id | jsonify }},
+      "url": {{ schema_site_url | jsonify }},
+      "name": {{ site.name | jsonify }},
+      "inLanguage": ["pt-BR", "en", "es"],
+      "publisher": { "@id": {{ schema_person_id | jsonify }} }
+    },
+    {
+      "@type": "Person",
+      "@id": {{ schema_person_id | jsonify }},
+      "name": {{ site.author.name | jsonify }},
+      "url": {{ site.author.url | jsonify }},
+      "image": { "@type": "ImageObject", "url": {{ site.author.image | absolute_url | jsonify }} },
+      "sameAs": {{ site.author.sameAs | jsonify }}
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": {{ schema_software_id | jsonify }},
+      "name": {{ site.application.name | jsonify }},
+      "url": {{ schema_site_url | jsonify }},
+      "applicationCategory": {{ site.application.category | jsonify }},
+      "operatingSystem": {{ site.application.operating_system | jsonify }},
+      "softwareVersion": {{ site.application.version | jsonify }},
+      "downloadUrl": {{ site.application.download_url | jsonify }},
+      "fileFormat": {{ site.application.file_format | jsonify }},
+      "license": "https://spdx.org/licenses/GPL-3.0-or-later.html",
+      "image": {{ schema_image_url | jsonify }},
+      "author": { "@id": {{ schema_person_id | jsonify }} }
+    }{% if page.manual %},
+    {
+      "@type": "TechArticle",
+      "@id": {{ schema_article_id | jsonify }},
+      "url": {{ schema_page_url | jsonify }},
+      "headline": {{ schema_name | jsonify }},
+      "description": {{ schema_description | jsonify }},
+      "inLanguage": {{ schema_language | jsonify }},
+      "author": { "@id": {{ schema_person_id | jsonify }} },
+      "about": { "@id": {{ schema_software_id | jsonify }} },
+      "mainEntityOfPage": { "@id": {{ schema_page_id | jsonify }} }{% if page.last_modified_at %},
+      "dateModified": {{ page.last_modified_at | date: "%Y-%m-%d" | jsonify }}{% endif %}
+    }{% endif %},
+    {
+      "@type": "WebPage",
+      "@id": {{ schema_page_id | jsonify }},
+      "url": {{ schema_page_url | jsonify }},
+      "name": {{ schema_name | jsonify }},
+      "description": {{ schema_description | jsonify }},
+      "inLanguage": {{ schema_language | jsonify }},
+      "isPartOf": { "@id": {{ schema_website_id | jsonify }} },
+      "primaryImageOfPage": { "@type": "ImageObject", "url": {{ schema_image_url | jsonify }} }{% if page.last_modified_at %},
+      "dateModified": {{ page.last_modified_at | date: "%Y-%m-%d" | jsonify }}{% endif %},
+      "mainEntity": { "@id": {% if page.manual %}{{ schema_article_id | jsonify }}{% else %}{{ schema_software_id | jsonify }}{% endif %} }
+    }
+  ]
+}
+</script>

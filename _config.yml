@@ -1,0 +1,115 @@
+title: Bellbird
+name: Bellbird
+description: Bellbird transforma documentos em LaTeX acadêmico legível, com modelos conhecidos e processamento local.
+url: "https://diegopn.github.io"
+baseurl: "/bellbird-site"
+default_lang: pt-BR
+permalink: pretty
+markdown: kramdown
+
+author:
+  name: "Diego Pereira do Nascimento"
+  url: "https://diegopn.github.io/"
+  image: "/assets/diego-illustration.jpg"
+  sameAs:
+    - "https://github.com/diegopn"
+
+social_image: "/assets/manual/tela-inicial.png"
+
+application:
+  name: Bellbird
+  version: "0.3.0"
+  download_url: "https://github.com/diegopn/bellbird/releases/download/v0.3.0/Bellbird-0.3.0-x86_64.flatpak"
+  repository_url: "https://github.com/diegopn/bellbird"
+  operating_system: "Linux (x86_64; GNOME)"
+  category: UtilitiesApplication
+  file_format: "application/vnd.flatpak"
+
+languages:
+  - lang: pt-BR
+    label: PT
+    home_url: /
+    manual_url: /manual/
+    home_anchor: "#inicio"
+    anchors:
+      workflow: "#fluxo"
+      formats: "#formatos"
+      privacy: "#privacidade"
+      download: "#download"
+    nav:
+      skip: Pular para o conteúdo
+      home: "Bellbird — início"
+      manual_home: Voltar ao início do Bellbird
+      main: Navegação principal
+      workflow: Como funciona
+      formats: Formatos
+      privacy: Privacidade
+      download: Download
+      manual: Manual
+      github: Repositório do Bellbird no GitHub
+      language: Idioma
+      dark_theme: Ativar tema escuro
+      open_menu: Abrir menu
+    footer_home: "Conversor de documentos para LaTeX · GPL-3.0-or-later"
+    footer_manual: "Manual do usuário · Português (Brasil)"
+    back_to_top: Voltar ao topo
+  - lang: en
+    label: EN
+    home_url: /en/
+    manual_url: /en/manual/
+    home_anchor: "#home"
+    anchors:
+      workflow: "#workflow"
+      formats: "#formats"
+      privacy: "#privacy"
+      download: "#download"
+    nav:
+      skip: Skip to content
+      home: "Bellbird — home"
+      manual_home: Back to the Bellbird home page
+      main: Main navigation
+      workflow: How it works
+      formats: Formats
+      privacy: Privacy
+      download: Download
+      manual: User manual
+      github: Bellbird repository on GitHub
+      language: Language
+      dark_theme: Enable dark theme
+      open_menu: Open menu
+    footer_home: "Document conversion to LaTeX · GPL-3.0-or-later"
+    footer_manual: "User manual · English"
+    back_to_top: Back to top
+  - lang: es
+    label: ES
+    home_url: /es/
+    manual_url: /es/manual/
+    home_anchor: "#inicio"
+    anchors:
+      workflow: "#flujo"
+      formats: "#formatos"
+      privacy: "#privacidad"
+      download: "#download"
+    nav:
+      skip: Saltar al contenido
+      home: "Bellbird — inicio"
+      manual_home: Volver al inicio de Bellbird
+      main: Navegación principal
+      workflow: Cómo funciona
+      formats: Formatos
+      privacy: Privacidad
+      download: Descarga
+      manual: Manual de usuario
+      github: Repositorio de Bellbird en GitHub
+      language: Idioma
+      dark_theme: Activar tema oscuro
+      open_menu: Abrir menú
+    footer_home: "Conversor de documentos a LaTeX · GPL-3.0-or-later"
+    footer_manual: "Manual de usuario · Español"
+    back_to_top: Volver arriba
+
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins: []

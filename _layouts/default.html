@@ -1,0 +1,30 @@
+{%- assign language = site.languages | where: "lang", page.lang | first -%}
+<!doctype html>
+<html lang="{{ page.lang | default: site.default_lang }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7faff">
+    {% include meta-tags.html %}
+    {% include structured-data.html %}
+    <link rel="icon" href="{{ '/assets/bellbird-icon.png' | relative_url }}" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <script>
+      try {
+        const theme = localStorage.getItem("bellbird-theme");
+        if (theme === "dark" || theme === "light") document.documentElement.dataset.theme = theme;
+      } catch {}
+    </script>
+    {% include google-analytics.html %}
+  </head>
+  <body{% if page.manual %} class="manual-page"{% endif %} id="topo">
+    <a class="skip-link" href="#{{ page.main_id }}">{{ language.nav.skip | escape }}</a>
+    {% include header.html %}
+    {{ content }}
+    {% include footer.html %}
+    <script src="{{ '/script.js' | relative_url }}"></script>
+  </body>
+</html>

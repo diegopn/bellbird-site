@@ -1,79 +1,26 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Bellbird user manual: supported formats, academic templates, local conversion, and LaTeX document export.">
-  <meta name="author" content="Diego Pereira do Nascimento">
-  <meta name="dcterms.modified" content="2026-10-26">
-  <meta name="theme-color" content="#f7faff">
-  <title>User manual — Bellbird</title>
-  <link rel="canonical" href="https://diegopn.github.io/bellbird-site/en/manual/">
-  <link rel="alternate" hreflang="pt-BR" href="https://diegopn.github.io/bellbird-site/manual/">
-  <link rel="alternate" hreflang="en" href="https://diegopn.github.io/bellbird-site/en/manual/">
-  <link rel="alternate" hreflang="es" href="https://diegopn.github.io/bellbird-site/es/manual/">
-  <link rel="alternate" hreflang="x-default" href="https://diegopn.github.io/bellbird-site/manual/">
-  <link rel="icon" href="../../assets/bellbird-icon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../../style.css">
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "headline": "Bellbird user manual",
-    "inLanguage": "en",
-    "url": "https://diegopn.github.io/bellbird-site/en/manual/",
-    "author": {"@type": "Person", "name": "Diego Pereira do Nascimento"},
-    "dateModified": "2026-10-26",
-    "about": {"@type": "SoftwareApplication", "name": "Bellbird", "softwareVersion": "0.3.0"}
-  }
-  </script>
-  <script>
-    try {
-      const theme = localStorage.getItem("bellbird-theme");
-      if (theme === "dark" || theme === "light") document.documentElement.dataset.theme = theme;
-    } catch {}
-  </script>
-</head>
-<body class="manual-page">
-  <a class="skip-link" href="#content">Skip to content</a>
+---
+layout: default
+lang: en
+title: "User manual — Bellbird"
+meta_title: "User manual — Bellbird"
+description: "Bellbird user manual: supported formats, academic templates, local conversion, and LaTeX document export."
+schema_name: "Bellbird User Manual"
+schema_type: TechArticle
+manual: true
+main_id: content
+image: /assets/manual/tela-inicial.png
+image_alt: "Bellbird home screen shown in the user manual"
+last_modified_at: 2026-10-26
+translations:
+  - lang: pt-BR
+    url: /manual/
+  - lang: en
+    url: /en/manual/
+  - lang: es
+    url: /es/manual/
+---
 
-  <header class="site-header">
-    <a class="brand" href="../#home" aria-label="Back to the Bellbird home page">
-      <img src="../../assets/bellbird-icon.png" alt="">
-      <span><strong>Bellbird</strong><small>Documents to LaTeX</small></span>
-    </a>
-
-    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
-      <a href="../#workflow">How it works</a>
-      <a href="../#formats">Formats</a>
-      <a href="../#privacy">Privacy</a>
-      <a href="../#download">Download</a>
-      <a href="./" aria-current="page">User manual</a>
-    </nav>
-
-    <div class="header-actions">
-      <a class="github-link" href="https://github.com/diegopn/bellbird" target="_blank" rel="noopener noreferrer" aria-label="Bellbird repository on GitHub">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .5C5.65.5.5 5.65.5 12c0 5.08 3.29 9.4 7.85 10.93.58.1.79-.25.79-.56v-2.16c-3.19.69-3.87-1.35-3.87-1.35-.53-1.34-1.3-1.7-1.3-1.7-1.06-.73.08-.71.08-.71 1.17.08 1.79 1.2 1.79 1.2 1.04 1.78 2.73 1.27 3.4.97.1-.76.4-1.27.74-1.56-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.29 1.2-3.1-.12-.3-.52-1.47.11-3.06 0 0 .98-.31 3.2 1.18a11.1 11.1 0 0 1 5.83 0c2.22-1.5 3.2-1.18 3.2-1.18.63 1.59.23 2.76.11 3.06.75.81 1.2 1.84 1.2 3.1 0 4.43-2.7 5.4-5.27 5.69.41.36.78 1.06.78 2.14v3.18c0 .31.21.67.8.56A11.51 11.51 0 0 0 23.5 12C23.5 5.65 18.35.5 12 .5z"/></svg>
-      </a>
-      <div class="language-switcher" role="group" aria-label="Language">
-        <a class="language-option" href="../../manual/" lang="pt-BR">PT</a>
-        <a class="language-option is-active" href="./" lang="en" aria-current="page">EN</a>
-        <a class="language-option" href="../../es/manual/" lang="es">ES</a>
-      </div>
-      <button class="theme-toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Enable dark theme" title="Enable dark theme">
-        <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 13.1A8.5 8.5 0 0 1 10.9 3.2 8.5 8.5 0 1 0 20.8 13.1Z"/></svg>
-        <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
-      </button>
-      <button class="menu-toggle" type="button" data-menu-toggle aria-expanded="false" aria-controls="main-nav" aria-label="Open menu">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </header>
-
-  <main id="content">
+<main id="content">
     <section class="manual-hero" id="home">
       <div class="wrap">
         <p class="kicker">User manual · edition 1</p>
@@ -81,7 +28,7 @@
         <p class="manual-intro">This guide covers supported formats, LaTeX templates, and how to convert, review, and export documents with Bellbird.</p>
         <p class="manual-meta">
           <span><b>Manual edition</b>1st edition</span>
-          <span><b>App version</b>0.3.0</span>
+          <span><b>App version</b>{{ site.application.version }}</span>
           <span><b>Updated</b><time datetime="2026-10-26">October 26, 2026</time></span>
           <span class="manual-meta-author"><b>Manual author</b>Diego Pereira do Nascimento</span>
         </p>
@@ -194,7 +141,7 @@
         <section id="installation">
           <p class="kicker">06 · Installation</p>
           <h2>Requirements and installation</h2>
-          <p>Bellbird 0.3.0 is available for Linux x86_64 as a Flatpak. <a href="https://github.com/diegopn/bellbird/releases/download/v0.3.0/Bellbird-0.3.0-x86_64.flatpak" target="_blank" rel="noopener noreferrer">Download Bellbird 0.3.0</a>.</p>
+          <p>Bellbird {{ site.application.version }} is available for Linux x86_64 as a Flatpak. <a href="{{ site.application.download_url }}" target="_blank" rel="noopener noreferrer">Download Bellbird {{ site.application.version }}</a>.</p>
           <p>If Flatpak is not set up on your computer yet, see the <a href="https://flathub.org/pt-BR/setup" target="_blank" rel="noopener noreferrer">instructions for preparing your system</a>.</p>
           <p><a href="../#download">Return to the site's download section</a> for the format, platform, and license.</p>
         </section>
@@ -220,7 +167,7 @@
           <dl class="manual-facts">
             <div><dt>Name</dt><dd>Bellbird</dd></div>
             <div><dt>Developer</dt><dd>Diego Pereira do Nascimento</dd></div>
-            <div><dt>Documented version</dt><dd>0.3.0</dd></div>
+            <div><dt>Documented version</dt><dd>{{ site.application.version }}</dd></div>
             <div><dt>Platform</dt><dd>Linux · GNOME</dd></div>
             <div><dt>Package format</dt><dd>Flatpak · Linux x86_64</dd></div>
             <div><dt>License</dt><dd>GNU GPL version 3 or later (GPL-3.0-or-later)</dd></div>
@@ -247,15 +194,3 @@
       </article>
     </div>
   </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-row">
-      <a class="footer-brand" href="../#home"><img src="../../assets/bellbird-icon.png" alt=""><strong>Bellbird</strong></a>
-      <span>User manual · English</span>
-      <a href="#home">Back to top ↑</a>
-    </div>
-  </footer>
-
-  <script src="../../script.js"></script>
-</body>
-</html>

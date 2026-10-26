@@ -1,0 +1,51 @@
+{%- assign meta_title = page.meta_title | default: page.title | default: site.title -%}
+{%- assign meta_description = page.description | default: site.description | strip_html | normalize_whitespace | truncate: 320 -%}
+{%- assign canonical_url = page.url | absolute_url -%}
+{%- assign social_locale = page.lang | default: site.default_lang | replace: "-", "_" -%}
+{%- assign social_image = page.image | default: site.social_image -%}
+{%- if social_image contains "://" -%}
+  {%- assign social_image_url = social_image -%}
+{%- else -%}
+  {%- assign social_image_url = social_image | absolute_url -%}
+{%- endif -%}
+{%- assign social_image_alt = page.image_alt | default: site.name -%}
+{%- assign social_type = "website" -%}
+{%- if page.manual -%}{%- assign social_type = "article" -%}{%- endif -%}
+<title>{{ meta_title | escape }}</title>
+<meta name="description" content="{{ meta_description | escape }}">
+<meta name="author" content="{{ site.author.name | escape }}">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+{% if page.last_modified_at %}<meta name="dcterms.modified" content="{{ page.last_modified_at | date: "%Y-%m-%d" }}">{% endif %}
+<link rel="canonical" href="{{ canonical_url | escape }}">
+{% if page.translations %}
+  {%- assign default_translation_url = page.url -%}
+  {% for translation in page.translations %}
+    <link rel="alternate" hreflang="{{ translation.lang | escape }}" href="{{ translation.url | absolute_url | escape }}">
+    {% if translation.lang == site.default_lang %}{% assign default_translation_url = translation.url %}{% endif %}
+  {% endfor %}
+  <link rel="alternate" hreflang="x-default" href="{{ default_translation_url | absolute_url | escape }}">
+{% endif %}
+<meta property="og:locale" content="{{ social_locale | escape }}">
+{% if page.translations %}
+  {% for translation in page.translations %}
+    {% unless translation.lang == page.lang %}
+      <meta property="og:locale:alternate" content="{{ translation.lang | replace: "-", "_" | escape }}">
+    {% endunless %}
+  {% endfor %}
+{% endif %}
+<meta property="og:type" content="{{ social_type }}">
+<meta property="og:title" content="{{ meta_title | escape }}">
+<meta property="og:description" content="{{ meta_description | escape }}">
+<meta property="og:url" content="{{ canonical_url | escape }}">
+<meta property="og:site_name" content="{{ site.name | escape }}">
+<meta property="og:image" content="{{ social_image_url | escape }}">
+<meta property="og:image:secure_url" content="{{ social_image_url | escape }}">
+<meta property="og:image:alt" content="{{ social_image_alt | escape }}">
+{% if page.manual and page.last_modified_at %}<meta property="article:modified_time" content="{{ page.last_modified_at | date_to_xmlschema }}">{% endif %}
+{% if page.manual %}<meta property="article:author" content="{{ site.author.url | escape }}">{% endif %}
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta_title | escape }}">
+<meta name="twitter:description" content="{{ meta_description | escape }}">
+<meta name="twitter:image" content="{{ social_image_url | escape }}">
+<meta name="twitter:image:alt" content="{{ social_image_alt | escape }}">
