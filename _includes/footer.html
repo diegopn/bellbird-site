@@ -2,7 +2,7 @@
 {%- assign home_href = language.home_url | append: language.home_anchor | relative_url -%}
 <footer class="site-footer">
   <div class="wrap footer-row">
-    <a class="footer-brand" href="{{ home_href }}"><img src="{{ '/assets/bellbird-icon.png' | relative_url }}" alt=""><strong>Bellbird</strong></a>
+    <a class="footer-brand" href="{{ home_href }}"><img src="{{ '/src/assets/images/bellbird-icon.png' | relative_url }}" alt=""><strong>Bellbird</strong></a>
     <span>{% if page.manual %}{{ language.footer_manual | escape }}{% else %}{{ language.footer_home | escape }}{% endif %}</span>
     <a href="#topo">{{ language.back_to_top | escape }} ↑</a>
   </div>

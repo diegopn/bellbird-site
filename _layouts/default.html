@@ -7,11 +7,11 @@
     <meta name="theme-color" content="#f7faff">
     {% include meta-tags.html %}
     {% include structured-data.html %}
-    <link rel="icon" href="{{ '/assets/bellbird-icon.png' | relative_url }}" type="image/png">
+    <link rel="icon" href="{{ '/src/assets/images/bellbird-icon.png' | relative_url }}" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/src/css/style.css' | relative_url }}">
     <script>
       try {
         const theme = localStorage.getItem("bellbird-theme");
@@ -25,6 +25,6 @@
     {% include header.html %}
     {{ content }}
     {% include footer.html %}
-    <script src="{{ '/script.js' | relative_url }}"></script>
+    <script src="{{ '/src/js/script.js' | relative_url }}"></script>
   </body>
 </html>

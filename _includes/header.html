@@ -7,7 +7,7 @@
 {%- assign manual_href = language.manual_url | relative_url -%}
 <header class="site-header">
   <a class="brand" href="{{ home_href }}" aria-label="{% if page.manual %}{{ language.nav.manual_home | escape }}{% else %}{{ language.nav.home | escape }}{% endif %}">
-    <img src="{{ '/assets/bellbird-icon.png' | relative_url }}" alt="">
+    <img src="{{ '/src/assets/images/bellbird-icon.png' | relative_url }}" alt="">
     <span><strong>Bellbird</strong><small>{% if page.lang == 'pt-BR' %}Documentos para LaTeX{% elsif page.lang == 'en' %}Documents to LaTeX{% else %}Documentos a LaTeX{% endif %}</small></span>
   </a>
   <nav class="main-nav" id="main-nav" aria-label="{{ language.nav.main | escape }}">

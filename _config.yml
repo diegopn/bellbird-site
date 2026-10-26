@@ -10,11 +10,11 @@ markdown: kramdown
 author:
   name: "Diego Pereira do Nascimento"
   url: "https://diegopn.github.io/"
-  image: "/assets/diego-illustration.jpg"
+  image: "/src/assets/images/diego-illustration.jpg"
   sameAs:
     - "https://github.com/diegopn"
 
-social_image: "/assets/manual/tela-inicial.png"
+social_image: "/src/assets/images/manual/tela-inicial.png"
 
 application:
   name: Bellbird
