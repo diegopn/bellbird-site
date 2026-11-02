@@ -23,7 +23,7 @@ application:
   repository_url: "https://github.com/diegopn/bellbird"
   operating_system: "Linux (x86_64; GNOME)"
   category: UtilitiesApplication
-  file_format: "application/vnd.flatpak"
+  encoding_format: "application/vnd.flatpak"
 
 languages:
   - lang: pt-BR
