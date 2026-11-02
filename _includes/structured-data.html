@@ -43,6 +43,11 @@
       "operatingSystem": {{ site.application.operating_system | jsonify }},
       "softwareVersion": {{ site.application.version | jsonify }},
       "downloadUrl": {{ site.application.download_url | jsonify }},
+      "offers": {
+        "@type": "Offer",
+        "price": 0,
+        "url": {{ site.application.download_url | jsonify }}
+      },
       "encodingFormat": {{ site.application.encoding_format | jsonify }},
       "license": "https://spdx.org/licenses/GPL-3.0-or-later.html",
       "image": {{ schema_image_url | jsonify }},
