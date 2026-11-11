@@ -18,8 +18,8 @@ social_image: "/src/assets/images/manual/tela-inicial.png"
 
 application:
   name: Bellbird
-  version: "0.3.0"
-  download_url: "https://github.com/diegopn/bellbird/releases/download/v0.3.0/Bellbird-0.3.0-x86_64.flatpak"
+  version: "0.4.0"
+  download_url: "https://github.com/diegopn/bellbird/releases/download/v0.4.0/Bellbird-0.4.0-x86_64.flatpak"
   repository_url: "https://github.com/diegopn/bellbird"
   operating_system: "Linux (x86_64; GNOME)"
   category: UtilitiesApplication
